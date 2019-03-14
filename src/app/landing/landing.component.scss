@@ -1,0 +1,129 @@
+@import '~animate.css/animate.min.css';
+.page-header {
+    background-attachment: fixed;
+    background-image: url('../../assets/img/PNG/background_image.png');
+    background-color: transparent;
+    overflow: visible;
+}
+
+.page-header .filter::after {
+    background-image: linear-gradient(299deg, rgba(60, 71, 90, 0.5), rgba(17, 26, 43, 0.5));
+    z-index: 0;
+}
+
+.navbar .nav-link p {
+    color: #ffffff;
+}
+
+.main .section:first-of-type {
+    z-index: 0;
+}
+
+.VHAlign {
+    justify-items: center;
+    align-items: center;
+}
+
+.title {
+    font-weight: 500;
+    color: #202020;
+    span {
+        font-weight: 900;
+    }
+}
+
+.description {
+    color: #5e6c7f;
+    font-size: 16px;
+}
+
+.quote {
+    background-image: linear-gradient(279deg, #3c475a, #111a2b);
+    .title {
+        color: white;
+    }
+}
+
+.btn-followUp {
+    background-color: #e5b000;
+    border: none;
+    border-radius: 0;
+    text-transform: none;
+}
+
+.orangeDiv,
+.yellowDiv {
+    background: url(../../assets/img/SVG/pattern.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 10px;
+    background-origin: content-box;
+    background-position: bottom;
+    height: 550px;
+    img {
+        width: 100%;
+        position: absolute;
+        top: -80px;
+    }
+    .towardsLeft {
+        right: -150px;
+    }
+    .towardsRight {
+        left: -150px;
+    }
+}
+
+.orangeDiv {
+    background-color: #ff774d;
+}
+
+.yellowDiv {
+    background-color: #e5b000;
+}
+
+.contact {
+    background: url(../../assets/img/SVG/contact_graphic.svg);
+    background-repeat: no-repeat;
+    background-size: 300px 300px;
+    background-position: top right;
+}
+
+@media (max-width: 767px) {
+    .title,
+    .description,
+    .quote,
+    .motto,
+    .section .col-md-6 {
+        text-align: center;
+    }
+    .section img {
+        margin: 30px auto;
+    }
+    .title,
+    .description {
+        padding: 10px;
+    }
+    .description {
+        font-size: 14px;
+    }
+    .orangeDiv,
+    .yellowDiv {
+        background-size: 50%;
+        height: 350px;
+        img {
+            width: 200px;
+            position: absolute;
+            top: -80px;
+            right: calc(50% - 100px) !important;
+        }
+        .towardsLeft {
+            right: auto;
+        }
+        .towardsRight {
+            left: auto;
+        }
+    }
+    .contact {
+        background-size: contain;
+    }
+}

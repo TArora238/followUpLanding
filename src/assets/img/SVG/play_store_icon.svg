@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>play_store_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="play_store_icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-33">
+            <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            <path d="M3,1 L4.27005348,1.73481775 L13.1053924,12.0040484 L4.28063723,22.2591101 L3,23 L3,1 Z M7.06628774,3.35425097 L16.0646173,8.56275335 L13.8060382,11.1882593 L7.06628774,3.35425097 Z M17.0023397,9.10526296 L22,12.0000001 L16.9981065,14.8967614 L14.5088017,12.0040484 L17.0023397,9.10526296 Z M13.8060382,12.8198386 L16.060383,15.439271 L7.07898855,20.6396769 L13.8060382,12.8198386 Z" id="play_store" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

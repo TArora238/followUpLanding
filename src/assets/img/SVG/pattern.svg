@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="100px" viewBox="0 0 320 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>pattern</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.229999989">
+        <g id="assets" transform="translate(-50.000000, -1545.000000)" fill="#FFFFFF">
+            <g id="pattern" transform="translate(50.000000, 1545.000000)">
+                <g id="Group-16-Copy-2" transform="translate(220.000000, 0.000000)">
+                    <polygon id="Rectangle-Copy-28" points="0 0 100 100 0 100"></polygon>
+                    <polygon id="Rectangle-Copy-30" transform="translate(50.000000, 50.000000) scale(-1, 1) translate(-50.000000, -50.000000) " points="0 0 100 100 0 100"></polygon>
+                </g>
+                <g id="Group-16-Copy-3" transform="translate(110.000000, 0.000000)">
+                    <polygon id="Rectangle-Copy-28" points="0 0 100 100 0 100"></polygon>
+                    <polygon id="Rectangle-Copy-30" transform="translate(50.000000, 50.000000) scale(-1, 1) translate(-50.000000, -50.000000) " points="0 0 100 100 0 100"></polygon>
+                </g>
+                <g id="Group-16-Copy-4">
+                    <polygon id="Rectangle-Copy-28" points="0 0 100 100 0 100"></polygon>
+                    <polygon id="Rectangle-Copy-30" transform="translate(50.000000, 50.000000) scale(-1, 1) translate(-50.000000, -50.000000) " points="0 0 100 100 0 100"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

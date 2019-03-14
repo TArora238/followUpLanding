@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="24px" viewBox="0 0 80 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>followup_logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="12" cy="12" r="12"></circle>
+        <circle id="path-3" cx="12" cy="12" r="12"></circle>
+        <circle id="path-5" cx="12" cy="12" r="12"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="follow_web" transform="translate(-150.000000, -38.000000)">
+            <g id="followup_logo" transform="translate(150.000000, 38.000000)">
+                <g id="Group-2">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Oval" fill="#FFC400" xlink:href="#path-1"></use>
+                    <g id="Group-3" mask="url(#mask-2)" fill="#000000" fill-opacity="0.15">
+                        <g transform="translate(-1.000000, 9.000000)">
+                            <polygon id="Rectangle-Copy" transform="translate(13.000000, 8.000000) scale(-1, 1) translate(-13.000000, -8.000000) " points="0 0 26 16 0 16"></polygon>
+                            <polygon id="Rectangle-Copy-2" points="0 0 26 16 0 16"></polygon>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group-2-Copy" transform="translate(28.000000, 0.000000)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <use id="Oval" fill="#FFC400" xlink:href="#path-3"></use>
+                    <g id="Group-3" mask="url(#mask-4)" fill="#000000" fill-opacity="0.15">
+                        <g transform="translate(-1.000000, 9.000000)">
+                            <polygon id="Rectangle-Copy" transform="translate(13.000000, 8.000000) scale(-1, 1) translate(-13.000000, -8.000000) " points="0 0 26 16 0 16"></polygon>
+                            <polygon id="Rectangle-Copy-2" points="0 0 26 16 0 16"></polygon>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group-2-Copy-2" transform="translate(56.000000, 0.000000)">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <use id="Oval" fill="#FFC400" xlink:href="#path-5"></use>
+                    <g id="Group-3" mask="url(#mask-6)" fill="#000000" fill-opacity="0.15">
+                        <g transform="translate(-1.000000, 9.000000)">
+                            <polygon id="Rectangle-Copy" transform="translate(13.000000, 8.000000) scale(-1, 1) translate(-13.000000, -8.000000) " points="0 0 26 16 0 16"></polygon>
+                            <polygon id="Rectangle-Copy-2" points="0 0 26 16 0 16"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
