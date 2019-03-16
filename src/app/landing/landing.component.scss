@@ -1,4 +1,9 @@
 @import '~animate.css/animate.min.css';
+body,
+html {
+    overflow-x: hidden;
+}
+
 .page-header {
     background-attachment: fixed;
     background-image: url('../../assets/img/PNG/background_image.png');
