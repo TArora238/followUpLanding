@@ -10,12 +10,8 @@ import { LandingComponent } from './landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 
 const routes: Routes = [
-    { path: 'home',             component: HomeComponent },
-    { path: 'user-profile',     component: ProfileComponent },
-    { path: 'signup',           component: SignupComponent },
-    { path: 'landing',          component: LandingComponent },
-    { path: 'nucleoicons',      component: NucleoiconsComponent },
-    { path: '', redirectTo: 'landing', pathMatch: 'full' }
+    { path: '',          component: LandingComponent },
+    // { path: '', redirectTo: 'landing', pathMatch: 'full' }
 ];
 
 @NgModule({
