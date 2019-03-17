@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
         this.renderer.listen('window', 'scroll', (event) => {
             const number = window.scrollY;
             console.log(number);
-            if (number > 150 || window.pageYOffset > 150) {
+            if (number > 50 || window.pageYOffset > 50) {
                 // add logic
                 navbar.classList.remove('navbar-transparent');
                 this.navbar.fbLogo = '../../../assets/img/SVG/fb_icon_dark.svg';
