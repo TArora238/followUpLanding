@@ -15,7 +15,6 @@ import { HostListener } from '@angular/core';
 export class AppComponent implements OnInit {
     private _router: Subscription;
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
-
     constructor(private renderer: Renderer2, private router: Router, @Inject(DOCUMENT)
      private document: any, private element: ElementRef, public location: Location) {}
     ngOnInit() {
@@ -27,6 +26,9 @@ export class AppComponent implements OnInit {
                 window.document.activeElement.scrollTop = 0;
             }
             this.navbar.sidebarClose();
+            this.navbar.fbLogo = '../../../assets/img/SVG/fb_icon.svg';
+            this.navbar.twitterLogo = '../../../assets/img/SVG/twitter_icon.svg';
+            this.navbar.linkdInLogo = '../../../assets/img/SVG/linked_in_icon.svg';
         });
         this.renderer.listen('window', 'scroll', (event) => {
             const number = window.scrollY;
@@ -34,9 +36,15 @@ export class AppComponent implements OnInit {
             if (number > 150 || window.pageYOffset > 150) {
                 // add logic
                 navbar.classList.remove('navbar-transparent');
+                this.navbar.fbLogo = '../../../assets/img/SVG/fb_icon_dark.svg';
+                this.navbar.twitterLogo = '../../../assets/img/SVG/twitter_icon_dark.svg';
+                this.navbar.linkdInLogo = '../../../assets/img/SVG/linked_in_icon_dark.svg';
             } else {
                 // remove logic
                 navbar.classList.add('navbar-transparent');
+                this.navbar.fbLogo = '../../../assets/img/SVG/fb_icon.svg';
+                this.navbar.twitterLogo = '../../../assets/img/SVG/twitter_icon.svg';
+                this.navbar.linkdInLogo = '../../../assets/img/SVG/linked_in_icon.svg';
             }
         });
         const ua = window.navigator.userAgent;

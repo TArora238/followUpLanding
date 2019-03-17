@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>fb_icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="follow_web" transform="translate(-1120.000000, -25.000000)">
+            <g id="Group-21" transform="translate(1120.000000, 25.000000)">
+                <g id="fb_icon">
+                    <circle id="Oval" stroke="#403D39" opacity="0.300000012" cx="25" cy="25" r="24.5"></circle>
+                    <path d="M28.6875747,25.0071838 L26.2747909,25.0071838 L26.2747909,34 L22.6995221,34 L22.6995221,25.0071838 L21,25.0071838 L21,21.8288391 L22.6995221,21.8288391 L22.6995221,19.7730349 C22.6995221,18.3006767 23.3685783,16 26.3076464,16 L28.9569892,16.0106195 L28.9569892,19.0958876 L27.0340502,19.0958876 C26.7210275,19.0958876 26.2759857,19.2595523 26.2759857,19.9616866 L26.2759857,21.8294638 L29,21.8294638 L28.6875747,25.0071838 L28.6875747,25.0071838 Z" id="Path" fill="#403D39"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

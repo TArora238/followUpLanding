@@ -9,9 +9,14 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
-
+    fbLogo: any;
+    twitterLogo: any;
+    linkdInLogo: any;
     constructor(public location: Location, private element: ElementRef) {
         this.sidebarVisible = false;
+        this.fbLogo = '../../../assets/img/SVG/fb_icon_dark.svg';
+        this.fbLogo = '../../../assets/img/SVG/twitter_icon_dark.svg';
+        this.fbLogo = '../../../assets/img/SVG/linked_in_icon_dark.svg';
     }
 
     ngOnInit() {
