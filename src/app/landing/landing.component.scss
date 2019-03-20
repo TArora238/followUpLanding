@@ -53,34 +53,6 @@
     z-index: 0;
 }
 
-.main {
-    overflow-x: hidden;
-    .section {
-        padding: 70px 15px;
-    }
-}
-
-.VHAlign {
-    justify-items: center;
-    align-items: center;
-}
-
-.title {
-    font-weight: 500;
-    font-family: 'Monsterrat-Medium';
-    color: #202020;
-    span {
-        font-weight: 900;
-        font-family: 'Monsterrat-Bold';
-    }
-}
-
-.description {
-    color: #5e6c7f;
-    font-size: 16px;
-    font-family: 'Roboto-Regular';
-}
-
 .quote {
     background-image: linear-gradient(279deg, #3c475a, #111a2b);
     .title {

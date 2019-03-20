@@ -3,11 +3,13 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 const routes: Routes = [
+    { path: '', redirectTo: 'landing', pathMatch: 'full' },
     { path: 'landing',          component: LandingComponent },
-    { path: '', redirectTo: 'landing', pathMatch: 'full' }
-];
+    { path: 'privacy',          component: PrivacyComponent },
+  ];
 
 @NgModule({
   imports: [
