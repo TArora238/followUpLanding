@@ -5,3 +5,10 @@
         color: #403D39 !important;
     }
 }
+
+@media (max-width: 767px) {
+    .navbar.navbar-transparent .nav-link p {
+        font-family: 'Monsterrat-SemiBold';
+        color: #9a9a9a !important;
+    }
+}
