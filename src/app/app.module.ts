@@ -42,4 +42,4 @@ import { TextMaskModule } from 'angular2-text-mask';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-platformBrowserDynamic().bootstrapModule(AppModule);
+// platformBrowserDynamic().bootstrapModule(AppModule);
