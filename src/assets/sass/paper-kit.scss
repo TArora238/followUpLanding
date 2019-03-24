@@ -131,3 +131,12 @@ html {
         margin-top: auto;
     }
 }
+
+.mat-form-field.mat-focused .mat-form-field-label,
+.mat-form-field-infix::after {
+    color: #e5b000!important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #e5b000 !important;
+}
