@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
         });
         this.renderer.listen('window', 'scroll', (event) => {
             const number = window.scrollY;
-            console.log(number);
+            // console.log(number);
             if (number > 50 || window.pageYOffset > 50) {
                 // add logic
                 navbar.classList.remove('navbar-transparent');

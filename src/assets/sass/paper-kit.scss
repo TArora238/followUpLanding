@@ -48,6 +48,7 @@
 @import "paper-kit/plugins/datetimepicker";
 @import "paper-kit/social-buttons";
 @import "paper-kit/examples";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 body,
 html {
     overflow-x: hidden;
@@ -118,4 +119,15 @@ html {
     color: #5e6c7f;
     font-size: 16px;
     font-family: 'Roboto-Regular';
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    * {
+        width: 100%;
+    }
+    label {
+        margin-top: auto;
+    }
 }
