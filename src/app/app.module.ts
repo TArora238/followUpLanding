@@ -14,7 +14,6 @@ import { MatFormFieldModule, MatInputModule, MatSnackBarModule } from '@angular/
 import { PrivacyComponent } from './privacy/privacy.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { NumbersOnlyDirective } from './shared/numbers-only.directive';
-
 import { TextMaskModule } from 'angular2-text-mask';
 @NgModule({
   declarations: [
