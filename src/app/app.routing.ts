@@ -39,7 +39,8 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes, {
-      anchorScrolling: 'enabled'
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled',
     })
   ],
   exports: [],

@@ -15,6 +15,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { NumbersOnlyDirective } from './shared/numbers-only.directive';
 import { TextMaskModule } from 'angular2-text-mask';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { TextMaskModule } from 'angular2-text-mask';
     BrowserModule,
     BrowserAnimationsModule,
     NgbModule.forRoot(),
+    ScrollToModule.forRoot(),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

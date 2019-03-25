@@ -49,14 +49,6 @@
 @import "paper-kit/social-buttons";
 @import "paper-kit/examples";
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-body,
-html {
-    overflow-x: hidden;
-    display: table;
-    width: 100%;
-    height: 100%;
-}
-
 @font-face {
     font-family: 'Monsterrat-Regular';
     src: url('../fonts/Monsterrat/Montserrat-Regular.ttf') format('truetype');
@@ -91,6 +83,15 @@ html {
     src: url('../fonts/Roboto/Roboto-Medium-webfont.eot') format('embedded-opentype'), url('../fonts/Roboto/Roboto-Medium-webfont.woff') format('woff'), url('../fonts/Roboto/Roboto-Medium-webfont.ttf') format('truetype'), url('../fonts/Roboto/Roboto-Medium-webfont.svg') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+body,
+html {
+    overflow-x: hidden;
+    display: table;
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
 }
 
 .main {

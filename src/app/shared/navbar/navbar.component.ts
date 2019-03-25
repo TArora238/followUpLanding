@@ -24,14 +24,20 @@ export class NavbarComponent implements OnInit {
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
     }
     scrollIntoView(anchorHash) {
-        setTimeout(() => {
-            const anchor = document.getElementById(anchorHash);
-            if (anchor) {
-                anchor.focus();
-                anchor.scrollIntoView();
-            }
-        });
+        // setTimeout(() => {
+        //     const anchor = document.getElementById(anchorHash);
+        //     if (anchor) {
+        //         anchor.focus();
+        //         anchor.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        //     }
+        // });
     }
+    // scrollIntoView(element): void {
+    //     const elementDiv = document.querySelector(element);
+    //     if (elementDiv) {
+    //         elementDiv.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    //     }
+    // }
     sidebarOpen() {
         const toggleButton = this.toggleButton;
         const html = document.getElementsByTagName('html')[0];
