@@ -1,15 +1,38 @@
-import { NgModule } from '@angular/core';
-import { CommonModule, } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
-import { LandingComponent } from './landing/landing.component';
-import { PrivacyComponent } from './privacy/privacy.component';
+import {
+  NgModule
+} from '@angular/core';
+import {
+  CommonModule,
+} from '@angular/common';
+import {
+  BrowserModule
+} from '@angular/platform-browser';
+import {
+  Routes,
+  RouterModule
+} from '@angular/router';
+import {
+  LandingComponent
+} from './landing/landing.component';
+import {
+  PrivacyComponent
+} from './privacy/privacy.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'landing', pathMatch: 'full' },
-    { path: 'landing',          component: LandingComponent },
-    { path: 'privacy',          component: PrivacyComponent },
-  ];
+  // { path: '', redirectTo: 'landing', pathMatch: 'full' },
+  {
+    path: '',
+    component: LandingComponent
+  },
+  {
+    path: 'privacy',
+    component: PrivacyComponent
+  },
+  {
+    path: '**',
+    component: LandingComponent
+  },
+];
 
 @NgModule({
   imports: [
@@ -19,7 +42,6 @@ const routes: Routes = [
       anchorScrolling: 'enabled'
     })
   ],
-  exports: [
-  ],
+  exports: [],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
