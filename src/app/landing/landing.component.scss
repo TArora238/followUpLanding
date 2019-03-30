@@ -22,6 +22,7 @@
     position: absolute;
     width: 100%;
     z-index: 1;
+    background-position: center;
 }
 
 .navbar .nav-link p {
@@ -43,6 +44,7 @@
         font-family: 'Monsterrat-SemiBold';
         background-color: #5b6c85;
         border: none;
+        padding: 0.5rem 0.75rem;
     }
      ::after {
         display: none;
@@ -147,5 +149,11 @@
     }
     .contact {
         background-size: contain;
+    }
+    .container {
+        max-width: 100%!important;
+        img.position-absolute {
+            position: relative!important;
+        }
     }
 }
