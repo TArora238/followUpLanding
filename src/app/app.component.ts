@@ -69,8 +69,10 @@ export class AppComponent implements OnInit {
     }
     removeFooter() {
         const titlee = this.location.prepareExternalUrl(this.location.path());
-        const titlee_temp = titlee.slice( 1 );
-        if (titlee_temp === 'signup' || titlee_temp === 'nucleoicons') {
+        // const titlee_temp = titlee.slice( 1 );
+        let titlee_temp = titlee.slice(1);
+        titlee_temp = titlee_temp.split('?')[0];
+        if (titlee_temp === 'signup' || titlee_temp === 'subscribe' || titlee_temp === 'success') {
             return false;
         } else {
             return true;
