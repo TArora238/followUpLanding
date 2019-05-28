@@ -15,6 +15,9 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { NumbersOnlyDirective } from './shared/numbers-only.directive';
 import { TextMaskModule } from 'angular2-text-mask';
+import { SignupComponent } from './signup/signup.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
+import { SuccessComponent } from './success/success.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,10 @@ import { TextMaskModule } from 'angular2-text-mask';
     NavbarComponent,
     FooterComponent,
     PrivacyComponent,
-    NumbersOnlyDirective
+    NumbersOnlyDirective,
+    SignupComponent,
+    SubscriptionComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,

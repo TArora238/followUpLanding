@@ -1,0 +1,67 @@
+.page-header {
+    min-height: 100vh;
+    padding-top: 15vh;
+    h1 {
+        font-family: 'Monsterrat-SemiBold';
+        line-height: 1.45em;
+        color: white;
+        z-index: 1;
+    }
+    .filter::after {
+        background-image: linear-gradient(303deg, #3c475a, #111a2b);
+        z-index: 0 !important;
+    }
+    .formSteps {
+        display: flex;
+        z-index: 1;
+        align-items: center;
+        margin: 40px auto;
+        .circle1,
+        .circle2 {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #e5b000;
+            display: inline-block;
+        }
+        // .circle2 {
+        //     background-color: #767c86;
+        // }
+        .line1 {
+            width: 60px;
+            height: 2px;
+            background-color: #e5b000;
+            // background-image: linear-gradient(90deg, #e5b000 30%, #767c86 30%);
+        }
+    }
+    .formDiv {
+        z-index: 1;
+        h3 {
+            color: white;
+        }
+        label {
+            color: #767c86;
+        }
+        .mat-input-element {
+            color: white;
+        }
+        // h6 {
+        //     color: rgba(255, 255, 255, 0.5);
+        // }
+    }
+    .btn-followUp {
+        background-color: #e5b000;
+        border: none;
+        border-radius: 0;
+        text-transform: none;
+        font-family: 'Monsterrat-SemiBold';
+    }
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-nav {
+    display: none;
+}

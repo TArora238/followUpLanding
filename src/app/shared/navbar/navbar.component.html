@@ -12,7 +12,7 @@
         </div>
         <div class="navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav ml-auto mr-auto">
-                <li class="nav-item">
+                <li class="nav-item" [ngClass]="{'hideMenu': isSignUpFlow()}">
                     <a class="nav-link" rel="tooltip" title="Features" data-placement="bottom" [routerLink]="['/']" fragment="features" (click)="scrollIntoView('features')">
                         <p>Features</p>
                     </a>
@@ -22,7 +22,7 @@
                         <p>Blog</p>
                     </a>
                 </li> -->
-                <li class="nav-item">
+                <li class="nav-item" [ngClass]="{'hideMenu': isSignUpFlow()}">
                     <a class="nav-link" rel="tooltip" title="Contact" data-placement="bottom" [routerLink]="['/']" fragment="contact" (click)="scrollIntoView('contact')">
                         <p>Contact</p>
                     </a>

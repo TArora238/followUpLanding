@@ -6,6 +6,7 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HostListener } from '@angular/core';
+import { ServiceService } from './shared/service.service';
 
 @Component({
     selector: 'app-root',
@@ -16,8 +17,12 @@ export class AppComponent implements OnInit {
     private _router: Subscription;
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
     constructor(private renderer: Renderer2, private router: Router, @Inject(DOCUMENT)
-     private document: any, private element: ElementRef, public location: Location) {}
+     private document: any, private element: ElementRef, public location: Location, public service: ServiceService) {}
     ngOnInit() {
+        this.service.init().subscribe((data: any) => {
+            // this.settingsData = data;
+            console.log('App Component Started');
+        });
         const navbar: HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
             if (window.outerWidth > 991) {

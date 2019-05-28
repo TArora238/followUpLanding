@@ -1,0 +1,58 @@
+<div class="page-header" data-parallax="true">
+    <div class="filter"></div>
+    <div class="container">
+        <div class="row">
+            <div class="formSteps">
+                <div class="circle1"></div>
+                <div class="line1"></div>
+                <div class="circle2"></div>
+            </div>
+        </div>
+        <div class="row col-12 col-md-8 offset-md-2">
+            <div class="formDiv m-auto">
+                <h3 class="col-12 mb-4">Add Debit/Credit Card</h3>
+                <form class="signup-form" #subscribeForm="ngForm" (ngSubmit)="subscribeAPI(subscribeForm)">
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="subscribeCardName" [(ngModel)]="subscribe.cardName" minlength="2" maxlength="100" matInput placeholder="Card Holder Name" type="text" required>
+                        <mat-error *ngIf="cardName.invalid">{{getCardNameMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="subscribeCardNumber" [(ngModel)]="subscribe.cardNumber" [textMask]="{mask:cardMask, guide:false}" matInput placeholder="Card Number" type="text" required>
+                        <mat-error *ngIf="cardNumber.invalid">{{getCardNumberMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12 col-md-6">
+                        <input name="subscribeCardExpiry" [(ngModel)]="subscribe.cardExpiry" [textMask]="{mask:cardExpiryMask, guide:false}" matInput placeholder="MM/YY" type="text" required>
+                        <mat-error *ngIf="cardExpiry.invalid">{{getCardNumberMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12 col-md-6">
+                        <input name="subscribeCardCVV" [(ngModel)]="subscribe.cardCVV" [textMask]="{mask:cardCVVMask, guide:false}" matInput placeholder="CVV" type="text" required>
+                        <mat-error *ngIf="cardCVV.invalid">{{getCardNumberMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="subscribeBilling" [(ngModel)]="subscribe.billing1" matInput placeholder="Billing address line1" type="text" required>
+                        <mat-error *ngIf="billing1.invalid">{{getBillingAddressMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="subscribeBilling2" [(ngModel)]="subscribe.billing2" matInput placeholder="Billing address line2 (Optional)" type="text">
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12 col-md-6">
+                        <input name="subscribeZip" [(ngModel)]="subscribe.zip" matInput placeholder="Zip Code" type="text" minlength="5" maxlength="7" required>
+                        <mat-error *ngIf="zip.invalid">{{getZipMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12 col-md-6">
+                        <input name="subscribeCity" [(ngModel)]="subscribe.city" matInput placeholder="City" type="text" minlength="2" required>
+                        <mat-error *ngIf="city.invalid">{{getCityMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="subscribeState" [(ngModel)]="subscribe.state" matInput placeholder="State" type="text" minlength="2" required>
+                        <mat-error *ngIf="state.invalid">{{getStateMessage()}}</mat-error>
+                    </mat-form-field>
+                    <div class="form-group col-12">
+                        <button mat-raised-button color="primary" class="btn w-100 btn-followUp">Start Free Trial</button>
+                        <!-- <button class="btn w-100 btn-followUp"></button> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

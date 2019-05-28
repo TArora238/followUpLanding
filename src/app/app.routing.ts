@@ -17,6 +17,9 @@ import {
 import {
   PrivacyComponent
 } from './privacy/privacy.component';
+import { SignupComponent } from './signup/signup.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
+import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -27,6 +30,18 @@ const routes: Routes = [
   {
     path: 'privacy',
     component: PrivacyComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
+  },
+  {
+    path: 'subscribe',
+    component: SubscriptionComponent
+  },
+  {
+    path: 'success',
+    component: SuccessComponent
   },
   {
     path: '**',

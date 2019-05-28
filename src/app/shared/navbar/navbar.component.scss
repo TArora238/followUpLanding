@@ -6,7 +6,14 @@
     }
 }
 
+.hideMenu {
+    visibility: hidden;
+}
+
 @media (max-width: 767px) {
+    .hideMenu {
+        display: none;
+    }
     .navbar.navbar-transparent .nav-link p {
         font-family: 'Monsterrat-SemiBold';
         color: #9a9a9a !important;

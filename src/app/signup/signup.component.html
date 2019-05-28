@@ -1,0 +1,50 @@
+<div class="page-header" data-parallax="true">
+    <div class="filter"></div>
+    <div class="container">
+        <div class="row">
+            <div class="formSteps">
+                <div class="circle1"></div>
+                <div class="line1"></div>
+                <div class="circle2"></div>
+            </div>
+        </div>
+        <div class="row col-12 col-md-8 offset-md-2">
+            <div class="formDiv m-auto">
+                <h3 class="col-12">Sign Up</h3>
+                <label class="col-12 mb-4">Enter your details to continue</label>
+                <form class="signup-form" #personal="ngForm" (ngSubmit)="signUpAPI(personal)">
+                    <mat-form-field class="mb-2 col-12 col-md-6">
+                        <input name="signupFName" [(ngModel)]="signup.fName" minlength="2" maxlength="100" matInput placeholder="First Name" type="text" required>
+                        <mat-error *ngIf="fName.invalid">{{getFNameMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12 col-md-6">
+                        <input name="signupLName" [(ngModel)]="signup.lName" minlength="2" maxlength="100" matInput placeholder="Last Name" type="text" required>
+                        <mat-error *ngIf="lName.invalid">{{getLNameMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="signupEmail" [(ngModel)]="signup.email" maxlength="100" matInput placeholder="Email" required>
+                        <mat-error *ngIf="email.invalid">{{getEmailMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <!-- <span matPrefix>+91 &nbsp;</span> -->
+                        <input name="signupMobile" [(ngModel)]="signup.mobile" maxlength="15" minlength="9" matInput placeholder="Mobile Number" type="tel" required [textMask]="{mask: mobileMask}">
+                        <mat-error *ngIf="mobile.invalid">{{getMobileMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="signupPassword" [(ngModel)]="signup.password" maxlength="100" matInput placeholder="Password" type="password" minlength="6" required>
+                        <mat-error *ngIf="password.invalid">{{getPasswordMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="signupCPassword" [(ngModel)]="signup.cPassword" maxlength="100" matInput placeholder="Confirm Password" type="password" required minlength="6">
+                        <mat-error *ngIf="password.invalid">{{getPasswordMessage()}}</mat-error>
+                    </mat-form-field>
+                    <div class="form-group col-12">
+                        <button mat-raised-button color="primary" class="btn w-100 btn-followUp">Sign Up</button>
+                        <!-- <button class="btn w-100 btn-followUp"></button> -->
+                    </div>
+                    <label class="col-12">By clicking “Sign Up” above, you are agreeing to our Terms & conditions.</label>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
