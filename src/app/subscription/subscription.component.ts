@@ -48,18 +48,11 @@ export class SubscriptionComponent implements OnInit {
   constructor(private snackBar: MatSnackBar, public service: ServiceService, public router: Router) { }
 
   ngOnInit() {
-    this.service.getUserData().subscribe((data: any) => {
-      console.log(data);
-      this.accessToken = data.access_token;
-      if (!this.accessToken) {
-        if (localStorage.getItem('accessToken')) {
-          this.accessToken = localStorage.getItem('accessToken');
-        }
-      }
-    })
     if (!this.accessToken) {
       if (localStorage.getItem('accessToken')) {
         this.accessToken = localStorage.getItem('accessToken');
+      } else {
+        this.router.navigate(['signup']);
       }
     }
   }
@@ -125,6 +118,8 @@ export class SubscriptionComponent implements OnInit {
           if (!this.accessToken) {
             if (localStorage.getItem('accessToken')) {
               this.accessToken = localStorage.getItem('accessToken');
+            } else {
+              this.router.navigate(['signup']);
             }
           }
           const params = {

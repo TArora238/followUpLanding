@@ -10,6 +10,7 @@ export class SuccessComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    localStorage.removeItem('accessToken');
   }
 
 }
