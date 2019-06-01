@@ -94,6 +94,7 @@ export class SubscriptionComponent implements OnInit {
           return false;
         }
       }
+      this.service.loader = true;
       const card = {
         name: form.value.subscribeCardName,
         number: form.value.subscribeCardNumber.trim(),
@@ -112,10 +113,14 @@ export class SubscriptionComponent implements OnInit {
           this.snackBar.open(response.error.message, '', {
             duration: 2000,
           });
+
+          this.service.loader = false;
           return false;
         } else {
           this.stripe_token = response.id;
           if (!this.accessToken) {
+
+            this.service.loader = false;
             if (localStorage.getItem('accessToken')) {
               this.accessToken = localStorage.getItem('accessToken');
             } else {
@@ -132,8 +137,12 @@ export class SubscriptionComponent implements OnInit {
             'stripe_token': this.stripe_token,
             'source_id': '0'
           };
+
+          this.service.loader = true;
           this.service.api('post', 'pay_subscription', params)
             .subscribe((data: any) => {
+
+              this.service.loader = false;
               if (data.is_error) {
                 this.snackBar.open(data.err, '', {
                   duration: 2000,
@@ -147,6 +156,8 @@ export class SubscriptionComponent implements OnInit {
                 this.router.navigate(['success']);
               }
             }, (err: any) => {
+
+                this.service.loader = false;
               this.snackBar.open(err.error, '', {
                 duration: 2000,
               });
@@ -154,6 +165,8 @@ export class SubscriptionComponent implements OnInit {
         }
       });
     } else {
+
+      this.service.loader = false;
       this.snackBar.open('Fill all the fields', '', {
         duration: 2000,
       });

@@ -10,6 +10,7 @@ declare var Stripe: any;
   providedIn: 'root'
 })
 export class ServiceService {
+  loader: any = false;
   env: any = environment;
   settings: any = {};
   private userData = new Subject<any>();
@@ -59,14 +60,17 @@ export class ServiceService {
       );
   }
   api(method: any, url: any, params: any) {
+    this.loader = true;
     if (method === 'post') {
       return this.http.post<any>(this.env.url + url, params)
         .pipe(
           timeout(20000),
           map((data: any) => {
+            this.loader = false;
             return data;
           }),
           catchError((error: any) => {
+            this.loader = false;
             if (error instanceof TimeoutError) {
               this.snackBar.open('Server Timeout, Try after sometime.', '', {
                 duration: 2000,

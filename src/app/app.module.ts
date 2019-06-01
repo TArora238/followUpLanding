@@ -6,11 +6,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
+// import { NgHttpLoaderModule } from 'ng-http-loader';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { MatFormFieldModule, MatInputModule, MatSnackBarModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatSnackBarModule, MatSelectModule, MatProgressSpinnerModule } from '@angular/material';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { NumbersOnlyDirective } from './shared/numbers-only.directive';
@@ -35,6 +36,7 @@ import { SuccessComponent } from './success/success.component';
     BrowserAnimationsModule,
     NgbModule.forRoot(),
     HttpClientModule,
+    // NgHttpLoaderModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
@@ -42,6 +44,8 @@ import { SuccessComponent } from './success/success.component';
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
+    MatProgressSpinnerModule,
+    MatSelectModule,
     TextMaskModule
   ],
   providers: [],

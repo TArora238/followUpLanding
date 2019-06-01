@@ -24,6 +24,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import {
   environment
 } from '../../environments/environment';
+
+import countries from 'assets/json/countries.json';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -34,13 +36,15 @@ import {
 })
 export class SignupComponent implements OnInit {
   env: any = environment;
+  countries: any = countries;
   signup: any = {
     fName: '',
     lName: '',
     mobile: '',
     email: '',
     password: '',
-    cPassword: ''
+    cPassword: '',
+    code: ''
   }
   mobileMask: any = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
   emailPattern: any = /^[a-z0-9A-Z]+[a-zA-Z0-9.+_]+@[a-z0-9A-Z.-]+\.[a-zA-Z]{2,7}$/;
@@ -108,7 +112,7 @@ export class SignupComponent implements OnInit {
         'user_first_name': form.value.signupFName,
         'user_last_name': form.value.signupLName,
         'user_password': form.value.signupPassword,
-        'user_mobile': '+44-' + form.value.signupMobile.replace(/[^0-9]/g, ''),
+        'user_mobile': form.value.signupCode + '-' + form.value.signupMobile.replace(/[^0-9]/g, ''),
         'referral_code': this.referral_code ? this.referral_code : '',
         'hear_from_us': '1',
         'device_id': this.service.deviceId(),

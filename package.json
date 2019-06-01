@@ -37,6 +37,7 @@
         "jquery": "3.2.1",
         "jw-bootstrap-switch-ng2": "2.0.1",
         "ng-animate": "^0.3.4",
+        "ng-http-loader": "^6.0.1",
         "ng2-nouislider": "1.7.12",
         "nouislider": "9.2.0",
         "popper.js": "1.14.4",

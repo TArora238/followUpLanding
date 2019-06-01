@@ -88,7 +88,7 @@ export class NavbarComponent implements OnInit {
         const titlee = this.location.prepareExternalUrl(this.location.path());
         let titlee_temp = titlee.slice(1);
         titlee_temp = titlee_temp.split('?')[0];
-        console.log(titlee);
+        // console.log(titlee);
         if (titlee_temp === 'success' || titlee_temp === 'subscribe' || titlee_temp === 'signup' ) {
             return true;
         } else {

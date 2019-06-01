@@ -7,13 +7,14 @@ import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HostListener } from '@angular/core';
 import { ServiceService } from './shared/service.service';
-
+// import { Spinkit } from 'ng-http-loader';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+    // public spinkit = Spinkit;
     private _router: Subscription;
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
     constructor(private renderer: Renderer2, private router: Router, @Inject(DOCUMENT)
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         this.service.init().subscribe((data: any) => {
             // this.settingsData = data;
+            this.service.loader = false;
             console.log('App Component Started');
         });
         const navbar: HTMLElement = this.element.nativeElement.children[0].children[0];
