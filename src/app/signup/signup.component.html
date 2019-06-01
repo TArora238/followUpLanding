@@ -26,8 +26,8 @@
                         <mat-error *ngIf="email.invalid">{{getEmailMessage()}}</mat-error>
                     </mat-form-field>
                     <mat-form-field class="mb-2 col-2">
-                        <mat-label>Code</mat-label>
-                        <mat-select [(ngModel)]="signup.code" name="signupCode">
+                        <mat-label>Code*</mat-label>
+                        <mat-select [(ngModel)]="signup.code" name="signupCode" required>
                             <mat-option *ngFor="let country of countries" [value]="country.dial_code">
                                 {{country.dial_code}}
                             </mat-option>
