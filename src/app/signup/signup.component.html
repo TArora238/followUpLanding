@@ -27,11 +27,17 @@
                     </mat-form-field>
                     <mat-form-field class="mb-2 col-2">
                         <mat-label>Code</mat-label>
-                        <mat-select [(ngModel)]="signup.code" name="signupCode" required>
+                        <!-- <mat-select [(ngModel)]="signup.code" name="signupCode" required>
                             <mat-option *ngFor="let country of countries" [value]="country.dial_code">
                                 {{country.dial_code}}
                             </mat-option>
-                        </mat-select>
+                        </mat-select> -->
+                        <input type="text" aria-label="Number" matInput [(ngModel)]="signup.code" name="signupCode" [matAutocomplete]="auto" [formControl]="myControl" required>
+                        <mat-autocomplete #auto="matAutocomplete" (optionSelected)='getCode($event.option.value)'>
+                            <mat-option *ngFor="let country of filteredCountries | async" [value]="country.dial_code">
+                                {{country.dial_code}}
+                            </mat-option>
+                        </mat-autocomplete>
                     </mat-form-field>
                     <mat-form-field class="mb-2 col-10">
                         <!-- <span matPrefix>+91 &nbsp;</span> -->

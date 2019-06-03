@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'app/shared/service.service';
 
 @Component({
   selector: 'app-success',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuccessComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ServiceService) { }
 
   ngOnInit() {
+    this.service.loader = false;
     localStorage.removeItem('accessToken');
   }
 

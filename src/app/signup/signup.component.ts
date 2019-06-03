@@ -26,6 +26,9 @@ import {
 } from '../../environments/environment';
 
 import countries from 'assets/json/countries.json';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -55,6 +58,8 @@ export class SignupComponent implements OnInit {
   mobile = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
   referral_code = '';
+  filteredCountries: Observable<any[]>;
+  myControl = new FormControl();
   constructor(private snackBar: MatSnackBar, public service: ServiceService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -67,6 +72,22 @@ export class SignupComponent implements OnInit {
         this.referral_code = params.ref;
         console.log(this.referral_code); // popular
       });
+    this.filteredCountries = this.myControl.valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filter(value))
+      );
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.countries.filter(option => option.dial_code.includes(filterValue));
+  }
+
+  getCode(code) {
+    console.log(code);
+    this.signup.code = code;
   }
   getEmailMessage() {
     return this.email.hasError('required') ? 'Email is required' :
@@ -101,6 +122,12 @@ export class SignupComponent implements OnInit {
           return false;
         }
       }
+      if (!this.signup.code) {
+        this.snackBar.open('Fill all the fields', '', {
+          duration: 2000,
+        });
+        return false;
+      }
       if (form.value.signupPassword !== form.value.signupCPassword) {
         this.snackBar.open('Passwords don\'t match', '', {
           duration: 2000,
@@ -112,7 +139,7 @@ export class SignupComponent implements OnInit {
         'user_first_name': form.value.signupFName,
         'user_last_name': form.value.signupLName,
         'user_password': form.value.signupPassword,
-        'user_mobile': form.value.signupCode + '-' + form.value.signupMobile.replace(/[^0-9]/g, ''),
+        'user_mobile': this.signup.code + '-' + form.value.signupMobile.replace(/[^0-9]/g, ''),
         'referral_code': this.referral_code ? this.referral_code : '',
         'hear_from_us': '1',
         'device_id': this.service.deviceId(),

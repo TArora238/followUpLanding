@@ -11,7 +11,13 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { MatFormFieldModule, MatInputModule, MatSnackBarModule, MatSelectModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatFormFieldModule,
+  MatInputModule,
+  MatSnackBarModule,
+  MatSelectModule,
+  MatProgressSpinnerModule,
+  MatAutocompleteModule
+} from '@angular/material';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { NumbersOnlyDirective } from './shared/numbers-only.directive';
@@ -46,6 +52,7 @@ import { SuccessComponent } from './success/success.component';
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatSelectModule,
+    MatAutocompleteModule,
     TextMaskModule
   ],
   providers: [],
