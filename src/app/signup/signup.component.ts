@@ -157,12 +157,12 @@ export class SignupComponent implements OnInit {
           } else {
             form.reset();
             form.resetForm();
-            this.snackBar.open('Form submitted successfully', '', {
+            this.snackBar.open('Registered successfully', '', {
               duration: 2000,
             });
             localStorage.setItem('accessToken', data.access_token);
             this.service.saveUserData(data);
-            this.router.navigate(['subscribe']);
+            this.router.navigate(['success']);
           }
         }, (err: any) => {
           console.log(err);
