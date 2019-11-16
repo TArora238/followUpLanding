@@ -25,6 +25,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { SignupComponent } from './signup/signup.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { SuccessComponent } from './success/success.component';
+import { NewLandingComponent } from './new-landing/landing.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { SuccessComponent } from './success/success.component';
     NumbersOnlyDirective,
     SignupComponent,
     SubscriptionComponent,
-    SuccessComponent
+    SuccessComponent,
+    NewLandingComponent
   ],
   imports: [
     BrowserModule,

@@ -112,6 +112,24 @@
     background-position: top right;
 }
 
+.home-vid {
+    // background: url(../../assets/videos/home_vid.mp4);
+    width: 100%;
+    height: 100vh;
+    video {
+        width: 100%;
+    }
+    .button-section {
+        position: absolute;
+        right: 100px;
+        bottom: 100px;
+    }
+    .btn {
+        background: #e5b000;
+        border: 2px solid #e5b000;
+    }
+}
+
 @media (max-width: 767px) {
     .title,
     .description,
