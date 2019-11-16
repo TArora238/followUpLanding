@@ -131,6 +131,26 @@
 }
 
 @media (max-width: 767px) {
+    .home-vid {
+        // background: url(../../assets/videos/home_vid.mp4);
+        width: 100%;
+        height: auto;
+        video {
+            width: 100%;
+        }
+        .button-section {
+            position: absolute;
+            right: 20px;
+            top: 160px;
+            height: 100px;
+            width: auto;
+        }
+        .btn {
+            background: #e5b000;
+            border: 2px solid #e5b000;
+            padding: 5px 5px;
+        }
+    }
     .title,
     .description,
     .quote,
