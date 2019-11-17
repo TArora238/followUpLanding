@@ -115,9 +115,17 @@
 .home-vid {
     // background: url(../../assets/videos/home_vid.mp4);
     width: 100%;
-    height: 100vh;
-    video {
+    height: auto;
+    min-height: 720px;
+    video,
+    iframe {
         width: 100%;
+        height: auto;
+        min-height: 720px;
+        .player {
+            max-width: 100% !important;
+            height: 100vh !important;
+        }
     }
     .button-section {
         position: absolute;
@@ -135,8 +143,14 @@
         // background: url(../../assets/videos/home_vid.mp4);
         width: 100%;
         height: auto;
-        video {
+        video,
+        iframe {
             width: 100%;
+            height: 240px;
+            .player {
+                max-width: 100%!important;
+                height: 100vh!important;
+            }
         }
         .button-section {
             position: absolute;
