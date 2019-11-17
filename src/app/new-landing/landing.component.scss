@@ -143,10 +143,12 @@
         // background: url(../../assets/videos/home_vid.mp4);
         width: 100%;
         height: auto;
+        min-height: 215px;
         video,
         iframe {
             width: 100%;
-            height: 240px;
+            height: 215px;
+            min-height: 215px;
             .player {
                 max-width: 100%!important;
                 height: 100vh!important;
