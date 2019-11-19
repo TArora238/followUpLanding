@@ -4,7 +4,7 @@ import { fadeInUp } from 'ng-animate';
 import { FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { ServiceService } from 'app/shared/service.service';
-
+declare var $: any;
 @Component({
     selector: 'app-landing',
     templateUrl: './landing.component.html',
@@ -33,7 +33,9 @@ export class LandingComponent implements OnInit {
   message = new FormControl('', [Validators.required]);
   constructor(private snackBar: MatSnackBar, public service: ServiceService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    $('iframe').contents().find('video').attr('style', 'width:100%;height:auto');
+  }
   getEmailMessage() {
     return this.email.hasError('required') ? 'Email is required' :
       this.email.hasError('email') ? 'Not a valid email' :

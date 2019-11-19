@@ -20,17 +20,12 @@ import {
 import { SignupComponent } from './signup/signup.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { SuccessComponent } from './success/success.component';
-import { NewLandingComponent } from './new-landing/landing.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'landing', pathMatch: 'full' },
   {
     path: '',
     component: LandingComponent
-  },
-  {
-    path: 'new',
-    component: NewLandingComponent
   },
   {
     path: 'privacy',

@@ -33,27 +33,27 @@ export class AppComponent implements OnInit {
                 window.document.activeElement.scrollTop = 0;
             }
             this.navbar.sidebarClose();
-            this.navbar.fbLogo = '../../../assets/img/SVG/fb_icon.svg';
-            this.navbar.twitterLogo = '../../../assets/img/SVG/twitter_icon.svg';
-            this.navbar.linkdInLogo = '../../../assets/img/SVG/linked_in_icon.svg';
+            // this.navbar.fbLogo = '../../../assets/img/SVG/fb_icon.svg';
+            // this.navbar.twitterLogo = '../../../assets/img/SVG/twitter_icon.svg';
+            // this.navbar.linkdInLogo = '../../../assets/img/SVG/linked_in_icon.svg';
         });
-        this.renderer.listen('window', 'scroll', (event) => {
-            const number = window.scrollY;
+        // this.renderer.listen('window', 'scroll', (event) => {
+        //     const number = window.scrollY;
             // console.log(number);
-            if (number > 50 || window.pageYOffset > 50) {
+            // if (number > 50 || window.pageYOffset > 50) {
                 // add logic
-                navbar.classList.remove('navbar-transparent');
+                // navbar.classList.remove('navbar-transparent');
                 this.navbar.fbLogo = '../../../assets/img/SVG/fb_icon_dark.svg';
                 this.navbar.twitterLogo = '../../../assets/img/SVG/twitter_icon_dark.svg';
                 this.navbar.linkdInLogo = '../../../assets/img/SVG/linked_in_icon_dark.svg';
-            } else {
+            // } else {
                 // remove logic
-                navbar.classList.add('navbar-transparent');
-                this.navbar.fbLogo = '../../../assets/img/SVG/fb_icon.svg';
-                this.navbar.twitterLogo = '../../../assets/img/SVG/twitter_icon.svg';
-                this.navbar.linkdInLogo = '../../../assets/img/SVG/linked_in_icon.svg';
-            }
-        });
+            //     navbar.classList.add('navbar-transparent');
+            //     this.navbar.fbLogo = '../../../assets/img/SVG/fb_icon.svg';
+            //     this.navbar.twitterLogo = '../../../assets/img/SVG/twitter_icon.svg';
+            //     this.navbar.linkdInLogo = '../../../assets/img/SVG/linked_in_icon.svg';
+            // }
+        // });
         const ua = window.navigator.userAgent;
         const trident = ua.indexOf('Trident/');
         let version = 0;
