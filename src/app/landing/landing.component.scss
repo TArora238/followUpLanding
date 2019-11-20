@@ -135,10 +135,14 @@
         position: absolute;
         right: 100px;
         bottom: 100px;
+        align-items: center;
+        display: flex;
     }
     .btn {
         background: #e5b000;
         border: 2px solid #e5b000;
+        align-items: center;
+        display: flex;
     }
 }
 
@@ -203,16 +207,22 @@
             }
         }
         .button-section {
-            position: absolute;
-            right: 10px;
-            top: 240px;
+            left: 20px;
+            top: 330px;
+            display: flex;
+            right: auto;
             height: 40px;
-            width: auto;
+            width: calc(100% - 40px);
+            z-index: 1;
+            align-items: center;
+            justify-content: center;
         }
         .btn {
             background: #e5b000;
             border: 2px solid #e5b000;
             padding: 5px 5px;
+            align-items: center;
+            display: flex;
         }
     }
 }
