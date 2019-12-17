@@ -28,7 +28,11 @@ import {
 import countries from 'assets/json/countries.json';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-
+import {
+  AuthService,
+  FacebookLoginProvider,
+  GoogleLoginProvider
+} from 'angular-6-social-login';
 
 @Component({
   selector: 'app-signup',
@@ -61,12 +65,14 @@ export class SignupComponent implements OnInit {
   referral_code = '';
   filteredCountries: Observable<any[]>;
   myControl = new FormControl();
+  mode_of_signup = 0;
+  token = '';
   constructor(
     private snackBar: MatSnackBar,
     public service: ServiceService,
     private router: Router,
     private route: ActivatedRoute,
-    // private socialAuthService: AuthService
+    private socialAuthService: AuthService
     ) {}
 
   ngOnInit() {
@@ -88,7 +94,6 @@ export class SignupComponent implements OnInit {
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-
     return this.countries.filter(option => option.dial_code.includes(filterValue));
   }
 
@@ -145,7 +150,7 @@ export class SignupComponent implements OnInit {
         'user_email': form.value.signupEmail,
         'user_first_name': form.value.signupFName,
         'user_last_name': form.value.signupLName,
-        'user_password': form.value.signupPassword,
+        'user_password': this.mode_of_signup > 0 ? form.value.signupPassword : '',
         'user_mobile': this.signup.code + '-' + form.value.signupMobile.replace(/[^0-9]/g, ''),
         'referral_code': this.referral_code ? this.referral_code : '',
         'hear_from_us': '1',
@@ -153,7 +158,9 @@ export class SignupComponent implements OnInit {
         device_type: this.env.device_type,
         device_token: this.env.device_token,
         app_type: this.env.app_type,
-        app_version: this.env.app_version
+        app_version: this.env.app_version,
+        mode_of_signup: this.mode_of_signup,
+        token: this.token
       }
       this.service.api('post', 'register_user', params)
         .subscribe((data: any) => {
@@ -184,5 +191,29 @@ export class SignupComponent implements OnInit {
     }
 
   }
-  
+  public socialSignUp(socialPlatform: string) {
+    let socialPlatformProvider;
+    if (socialPlatform === 'facebook') {
+      socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+    } else if (socialPlatform === 'google') {
+      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+    }
+
+    this.socialAuthService.signIn(socialPlatformProvider).then(
+      (userData) => {
+        console.log(socialPlatform + ' sign in data : ', userData);
+        this.signup.email = userData.email;
+        const name = userData.name.split(' ');
+        this.signup.fName = name[0] || '';
+        this.signup.lName = name[1] || '';
+        if (socialPlatform === 'facebook') {
+          this.mode_of_signup = 1;
+          this.token = userData.idToken;
+        } else if (socialPlatform === 'google') {
+          this.mode_of_signup = 2;
+          this.token = userData.token;
+        }
+      }
+    );
+  }
 }
