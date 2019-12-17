@@ -20,6 +20,7 @@ import {
 import { SignupComponent } from './signup/signup.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { SuccessComponent } from './success/success.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: 'subscribe',
