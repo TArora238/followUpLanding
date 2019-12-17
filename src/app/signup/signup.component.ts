@@ -134,7 +134,7 @@ export class SignupComponent implements OnInit {
           return false;
         }
       }
-      if (!this.signup.code) {
+      if (!this.signup.code && this.mode_of_signup === 0) {
         this.snackBar.open('Fill all the fields', '', {
           duration: 2000,
         });
@@ -208,7 +208,7 @@ export class SignupComponent implements OnInit {
         this.signup.lName = name[1] || '';
         if (socialPlatform === 'facebook') {
           this.mode_of_signup = 1;
-          this.token = userData.idToken;
+          this.token = userData.token;
         } else if (socialPlatform === 'google') {
           this.mode_of_signup = 2;
           this.token = userData.token;
