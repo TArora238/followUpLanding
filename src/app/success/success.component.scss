@@ -22,6 +22,7 @@
         color: #202020;
         border-radius: 0;
         border: 0;
+        margin: 30px auto!important;
     }
     .filter::after {
         background-image: linear-gradient(303deg, #3c475a, #111a2b);
@@ -31,4 +32,16 @@
 
 .navbar-nav {
     display: none!important;
+}
+
+.button-section {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    .btn {
+        background: #e5b000;
+        border: 2px solid #e5b000;
+        align-items: center;
+        display: flex;
+    }
 }

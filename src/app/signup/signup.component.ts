@@ -29,6 +29,7 @@ import countries from 'assets/json/countries.json';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -60,7 +61,13 @@ export class SignupComponent implements OnInit {
   referral_code = '';
   filteredCountries: Observable<any[]>;
   myControl = new FormControl();
-  constructor(private snackBar: MatSnackBar, public service: ServiceService, private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private snackBar: MatSnackBar,
+    public service: ServiceService,
+    private router: Router,
+    private route: ActivatedRoute,
+    // private socialAuthService: AuthService
+    ) {}
 
   ngOnInit() {
     console.log(this.route.queryParams);
@@ -177,4 +184,5 @@ export class SignupComponent implements OnInit {
     }
 
   }
+  
 }

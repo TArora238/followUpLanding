@@ -25,6 +25,30 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { SignupComponent } from './signup/signup.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { SuccessComponent } from './success/success.component';
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from 'angular-6-social-login';
+import { RegisterComponent } from './register/register.component';
+
+// Configs
+export function getAuthServiceConfigs() {
+  const config = new AuthServiceConfig(
+    [
+      {
+        id: FacebookLoginProvider.PROVIDER_ID,
+        provider: new FacebookLoginProvider('361455994444229')
+      },
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider('419674060274-quouat5rppjh81a3autgb9gimtvimpl2.apps.googleusercontent.com')
+      }
+    ]);
+  return config;
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +59,8 @@ import { SuccessComponent } from './success/success.component';
     NumbersOnlyDirective,
     SignupComponent,
     SubscriptionComponent,
-    SuccessComponent
+    SuccessComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +78,13 @@ import { SuccessComponent } from './success/success.component';
     MatProgressSpinnerModule,
     MatSelectModule,
     MatAutocompleteModule,
-    TextMaskModule
+    TextMaskModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [{
+    provide: AuthServiceConfig,
+    useFactory: getAuthServiceConfigs
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

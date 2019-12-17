@@ -41,7 +41,7 @@
                     </mat-form-field>
                     <mat-form-field class="mb-2 col-10">
                         <!-- <span matPrefix>+91 &nbsp;</span> -->
-                        <input name="signupMobile" [(ngModel)]="signup.mobile" maxlength="15" minlength="9" matInput placeholder="Mobile Number" type="tel" required [textMask]="{mask: mobileMask}">
+                        <input name="signupMobile" [(ngModel)]="signup.mobile" maxlength="15" minlength="9" matInput placeholder="Mobile Number" type="tel" [textMask]="{mask: mobileMask}">
                         <mat-error *ngIf="mobile.invalid">{{getMobileMessage()}}</mat-error>
                     </mat-form-field>
                     <mat-form-field class="mb-2 col-12">
