@@ -273,6 +273,7 @@ export class PaymentMethodComponent implements OnInit {
     const clientSecret = cardButton.dataset.secret;
 
     cardButton.addEventListener('click', async (ev) => {
+      this.service.loader = true;
       if (intent === 'setup') {
         stripe.confirmCardSetup(
           secret_key,
@@ -300,19 +301,15 @@ export class PaymentMethodComponent implements OnInit {
     const errorElement = document.querySelector('.error');
     successElement.classList.remove('visible');
     errorElement.classList.remove('visible');
-
+    this.service.loader = false;
     if (result.setupIntent && result.setupIntent.status === 'succeeded') {
       successElement.querySelector('.message').textContent = 'Your card has been added successfully';
       successElement.classList.add('visible');
-      setTimeout(function () {
-        this.router.navigate(['paymentMethodSuccess']);
-      }, 10);
+      this.router.navigate(['paymentMethodSuccess']);
     } else if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
       successElement.querySelector('.message').textContent = 'Your card has been added & payment has been made successfully';
       successElement.classList.add('visible');
-      setTimeout(function () {
-        this.router.navigate(['paymentSuccess']);
-      }, 10);
+      this.router.navigate(['paymentSuccess']);
     } if (result.error) {
       errorElement.textContent = result.error.message;
       errorElement.classList.add('visible');
