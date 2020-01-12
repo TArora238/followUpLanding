@@ -1,0 +1,47 @@
+.page-header {
+    min-height: 100vh;
+    padding: 15vh 0;
+    h3 {
+        font-family: 'Monsterrat-SemiBold';
+        line-height: 1.45em;
+        color: white;
+        z-index: 1;
+    }
+    img,
+    h3,
+    button,
+    label {
+        z-index: 1;
+    }
+    label {
+        color: #767c86;
+        margin: 20px;
+    }
+    button.btn-primary {
+        background-color: white;
+        color: #202020;
+        border-radius: 0;
+        border: 0;
+        margin: 30px auto !important;
+    }
+    .filter::after {
+        background-image: linear-gradient(303deg, #3c475a, #111a2b);
+        z-index: 0 !important;
+    }
+}
+
+.navbar-nav {
+    display: none !important;
+}
+
+.button-section {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    .btn {
+        background: #e5b000;
+        border: 2px solid #e5b000;
+        align-items: center;
+        display: flex;
+    }
+}

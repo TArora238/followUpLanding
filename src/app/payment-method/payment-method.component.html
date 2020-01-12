@@ -1,0 +1,114 @@
+<div class="page-header" data-parallax="true">
+    <div class="filter"></div>
+    <div class="container">
+        <div class="row">
+            <div class="formSteps">
+                <div class="circle1"></div>
+                <div class="line1"></div>
+                <div class="circle2"></div>
+            </div>
+        </div>
+        <div class="row col-12 col-md-8 offset-md-2">
+            <div class="cardsSection w-100">
+                <div *ngIf="cards.length > 0" class="w-100 p-0">
+                    <h4>Added Payment Methods: </h4>
+                    <div class="cardsDiv">
+                        <div *ngFor="let card of cards" class="cardDiv w-100">
+                            <div class="cardHeader p-15 w-100">
+                                <p class="m-0 w-75" style="display:flex;align-items: center">
+                                    <i class="fa fa-credit-card lightGreyIcon"></i>&nbsp;&nbsp;XXXX-XXXX-XXXX-{{card.last4}}
+                                </p>
+                                <a class="w-25" (click)="deletePaymentMethod(card)">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                                <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p-0 text-right">
+                                <p class="m-0"
+                                    style="display:flex;align-items: center;color:#36af47;flex-direction: row-reverse;"
+                                    ng-if="card.is_default"><i
+                                        class="p-l-15 fa fa-check-circle greenIcon"></i>&nbsp;&nbsp;Default
+                                </p>
+                                <a ng-click="viewCon.makeDefaultPop(card,'doctor')" ng-if="!card.is_default">Make
+                                    Default</a>
+                            </div> -->
+                                <!-- <p class="col-lg-12 col-xs-12 bg-danger"
+                                ng-if="card.last_error!='null'&&card.last_error!=null">{{card.last_error||''}}</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div [hidden]="showForm" class="w-100" style="display: flex; flex-direction: row;">
+                <button (click)="showForms(0)" mat-raised-button class="btn w-100 btn-followUp" color="primary">
+                    Add New Payment Method
+                </button>
+                <button (click)="showForms(1)" mat-raised-button class="btn w-100 btn-followUp" color="primary">
+                    Save New Payment Method & Pay
+                </button>
+            </div>
+            <div [hidden]="!showForm" class="formDiv m-auto">
+                <h3 class="col-12 mb-4">
+                    {{labelText}}</h3>
+                <form>
+                    <label>
+                        <input id="cardholder-name" name="cardholder-name" class="field is-empty"
+                            placeholder="Cardholder Name" />
+                        <span><span>Name</span></span>
+                    </label>
+                    <label>
+                        <div id="card-element" class="field is-empty"></div>
+                        <span><span>Credit or debit card</span></span>
+                    </label>
+                    <button mat-raised-button class="btn w-100 btn-followUp" color="primary" id="card-button" [attr.data-secret]="client_secret">
+                        {{buttonText}}
+                    </button>
+                    <div class="outcome">
+                        <div class="error" role="alert"></div>
+                        <div class="success">
+                            <span class="message"></span>
+                        </div>
+                    </div>
+                </form>
+                <!-- <form class="signup-form" #paymentMethodForm="ngForm" (ngSubmit)="paymentMethodAPI(paymentMethodForm)">
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="paymentMethodCardName" [(ngModel)]="paymentMethod.cardName" minlength="2" maxlength="100" matInput placeholder="Card Holder Name" type="text" required>
+                        <mat-error *ngIf="cardName.invalid">{{getCardNameMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="paymentMethodCardNumber" [(ngModel)]="paymentMethod.cardNumber" [textMask]="{mask:cardMask, guide:false}" matInput placeholder="Card Number" type="text" required>
+                        <mat-error *ngIf="cardNumber.invalid">{{getCardNumberMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12 col-md-6">
+                        <input name="paymentMethodCardExpiry" [(ngModel)]="paymentMethod.cardExpiry" [textMask]="{mask:cardExpiryMask, guide:false}" matInput placeholder="MM/YY" type="text" required>
+                        <mat-error *ngIf="cardExpiry.invalid">{{getCardNumberMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12 col-md-6">
+                        <input name="paymentMethodCardCVV" [(ngModel)]="paymentMethod.cardCVV" [textMask]="{mask:cardCVVMask, guide:false}" matInput placeholder="CVV" type="text" required>
+                        <mat-error *ngIf="cardCVV.invalid">{{getCardNumberMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="paymentMethodBilling" [(ngModel)]="paymentMethod.billing1" matInput placeholder="Billing address line1" type="text" required>
+                        <mat-error *ngIf="billing1.invalid">{{getBillingAddressMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="paymentMethodBilling2" [(ngModel)]="paymentMethod.billing2" matInput placeholder="Billing address line2 (Optional)" type="text">
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12 col-md-6">
+                        <input name="paymentMethodZip" [(ngModel)]="paymentMethod.zip" matInput placeholder="Zip Code" type="text" minlength="5" maxlength="7" required>
+                        <mat-error *ngIf="zip.invalid">{{getZipMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12 col-md-6">
+                        <input name="paymentMethodCity" [(ngModel)]="paymentMethod.city" matInput placeholder="City" type="text" minlength="2" required>
+                        <mat-error *ngIf="city.invalid">{{getCityMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="paymentMethodState" [(ngModel)]="paymentMethod.state" matInput placeholder="State" type="text" minlength="2" required>
+                        <mat-error *ngIf="state.invalid">{{getStateMessage()}}</mat-error>
+                    </mat-form-field>
+                    <div class="form-group col-12">
+                        <button mat-raised-button color="primary" class="btn w-100 btn-followUp">Add Payment Method</button>
+                    </div>
+                </form> -->
+            </div>
+        </div>
+    </div>
+</div>

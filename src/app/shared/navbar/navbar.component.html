@@ -28,6 +28,16 @@
                         <p>Contact</p>
                     </a>
                 </li>
+                <li class="nav-item" [ngClass]="{'hideMenu': isSignUpFlow()}">
+                    <a class="nav-link" rel="tooltip" title="Login" data-placement="bottom" [routerLink]="['/login']">
+                        <p>Login</p>
+                    </a>
+                </li>
+                <li class="nav-item" [ngClass]="{'hideMenu': isSignUpFlow()}">
+                    <a class="nav-link" rel="tooltip" title="Sign Up" data-placement="bottom" [routerLink]="['/signup']">
+                        <p>Sign Up</p>
+                    </a>
+                </li>
                 <li class="nav-item d-lg-none">
                     <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/followupprofessional" target="_blank">
                         <p class="d-lg-none">Facebook</p>

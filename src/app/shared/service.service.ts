@@ -51,7 +51,7 @@ export class ServiceService {
         map((data: any) => {
           this.settings = data;
           // console.log(this.data);
-          Stripe.setPublishableKey(this.settings.stripe_key);
+          Stripe(this.settings.stripe_key);
           return data;
         }),
         catchError((error: any) => {

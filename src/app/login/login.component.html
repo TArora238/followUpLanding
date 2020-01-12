@@ -1,0 +1,33 @@
+<div class="page-header" data-parallax="true">
+    <div class="filter"></div>
+    <div class="container">
+        <div class="row">
+            <div class="formSteps">
+                <div class="circle1"></div>
+                <div class="line1"></div>
+                <div class="circle2"></div>
+            </div>
+        </div>
+        <div class="row col-12 col-md-8 offset-md-2">
+            <div class="formDiv m-auto">
+                <h3 class="col-12">Login</h3>
+                <button class="loginBtn loginBtn-facebook" (click)="socialLogin('facebook')">Login with Facebook</button>
+                <button class="loginBtn loginBtn-google" (click)="socialLogin('google')">Login with Google</button>
+                <label class="col-12 mb-4">Enter your details to continue</label>
+                <form class="signup-form" #personal="ngForm" (ngSubmit)="loginAPI(personal)">
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="loginEmail" [(ngModel)]="login.email" maxlength="100" matInput placeholder="Email" required>
+                        <mat-error *ngIf="email.invalid">{{getEmailMessage()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="mb-2 col-12">
+                        <input name="loginPassword" [(ngModel)]="login.password" maxlength="100" matInput placeholder="Password" type="password" minlength="6" required>
+                        <mat-error *ngIf="password.invalid">{{getPasswordMessage()}}</mat-error>
+                    </mat-form-field>
+                    <div class="form-group col-12">
+                        <button mat-raised-button color="primary" class="btn w-100 btn-followUp">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

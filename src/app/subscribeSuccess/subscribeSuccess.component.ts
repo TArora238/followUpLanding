@@ -3,14 +3,14 @@ import { ServiceService } from 'app/shared/service.service';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { fadeInUp } from 'ng-animate';
 @Component({
-  selector: 'app-success',
-  templateUrl: './success.component.html',
-  styleUrls: ['./success.component.scss'],
+  selector: 'app-subscribe-success',
+  templateUrl: './subscribeSuccess.component.html',
+  styleUrls: ['./subscribeSuccess.component.scss'],
   animations: [
     trigger('fadeInUp', [transition('* => *', useAnimation(fadeInUp))])
   ],
 })
-export class SuccessComponent implements OnInit {
+export class SubscribeSuccessComponent implements OnInit {
 
   constructor(private service: ServiceService) { }
 

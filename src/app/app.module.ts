@@ -32,6 +32,11 @@ import {
   FacebookLoginProvider,
 } from 'angular-6-social-login';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { SubscribeSuccessComponent } from './subscribeSuccess/subscribeSuccess.component';
+import { PaymentMethodComponent } from './payment-method/payment-method.component';
+import { PaymentMethodSuccessComponent } from './payment-method-success/payment-method-success.component';
+import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 
 // Configs
 export function getAuthServiceConfigs() {
@@ -60,7 +65,12 @@ export function getAuthServiceConfigs() {
     SignupComponent,
     SubscriptionComponent,
     SuccessComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent,
+    SubscribeSuccessComponent,
+    PaymentMethodComponent,
+    PaymentMethodSuccessComponent,
+    PaymentSuccessComponent
   ],
   imports: [
     BrowserModule,

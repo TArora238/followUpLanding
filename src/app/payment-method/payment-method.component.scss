@@ -1,0 +1,233 @@
+.page-header {
+    min-height: 100vh;
+    padding: 15vh 0;
+    h1 {
+        font-family: 'Monsterrat-SemiBold';
+        line-height: 1.45em;
+        color: white;
+        z-index: 1;
+    }
+    .filter::after {
+        background-image: linear-gradient(303deg, #3c475a, #111a2b);
+        z-index: 0 !important;
+    }
+    .formSteps {
+        display: flex;
+        z-index: 1;
+        align-items: center;
+        margin: 40px auto;
+        .circle1,
+        .circle2 {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #e5b000;
+            display: inline-block;
+        }
+        // .circle2 {
+        //     background-color: #767c86;
+        // }
+        .line1 {
+            width: 60px;
+            height: 2px;
+            background-color: #e5b000;
+            // background-image: linear-gradient(90deg, #e5b000 30%, #767c86 30%);
+        }
+    }
+    .formDiv {
+        z-index: 1;
+        h3 {
+            color: white;
+        }
+        label {
+            color: #767c86;
+        }
+        .mat-input-element {
+            color: white;
+        }
+        // h6 {
+        //     color: rgba(255, 255, 255, 0.5);
+        // }
+    }
+    .btn-followUp {
+        background-color: #e5b000;
+        border: none;
+        border-radius: 0;
+        text-transform: none;
+        font-family: 'Monsterrat-SemiBold';
+    }
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-nav {
+    display: none;
+}
+
+form {
+    width: 480px;
+    margin: 20px auto;
+}
+
+label {
+    height: 35px;
+    position: relative;
+    color: #8798AB;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+label>span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 300;
+    line-height: 32px;
+    color: #8798AB;
+    border-bottom: 1px solid #586A82;
+    transition: border-bottom-color 200ms ease-in-out;
+    cursor: text;
+    pointer-events: none;
+}
+
+label>span span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0% 50%;
+    transition: transform 200ms ease-in-out;
+    cursor: text;
+}
+
+label .field.is-focused+span span,
+label .field:not(.is-empty)+span span {
+    transform: scale(0.68) translateY(-36px);
+    cursor: default;
+}
+
+label .field.is-focused+span {
+    border-bottom-color: #34D08C;
+}
+
+.field {
+    background: transparent;
+    font-weight: 300;
+    border: 0;
+    color: white;
+    outline: none;
+    cursor: text;
+    display: block;
+    width: 100%;
+    line-height: 32px;
+    padding-bottom: 3px;
+    transition: opacity 200ms ease-in-out;
+}
+
+.field::-webkit-input-placeholder {
+    color: #8898AA;
+}
+
+.field::-moz-placeholder {
+    color: #8898AA;
+}
+
+
+/* IE doesn't show placeholders when empty+focused */
+
+.field:-ms-input-placeholder {
+    color: #424770;
+}
+
+.field.is-empty:not(.is-focused) {
+    opacity: 0;
+}
+
+button {
+    float: left;
+    display: block;
+    background: #34D08C;
+    color: white;
+    border-radius: 2px;
+    border: 0;
+    margin: 20px;
+    font-size: 19px;
+    font-weight: 400;
+    width: 100%;
+    // height: 47px;
+    // line-height: 45px;
+    outline: none;
+}
+
+button:focus {
+    background: #24B47E;
+}
+
+button:active {
+    background: #159570;
+}
+
+.outcome {
+    float: left;
+    width: 100%;
+    padding-top: 8px;
+    min-height: 20px;
+    text-align: center;
+}
+
+.success,
+.error {
+    display: none;
+    font-size: 15px;
+}
+
+.success.visible,
+.error.visible {
+    display: inline;
+}
+
+.error {
+    color: #E4584C;
+}
+
+.success {
+    color: #34D08C;
+}
+
+.success .token {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.cardsSection {
+    h4 {
+        color: white;
+        margin-bottom: 10px;
+    }
+    .cardsDiv {
+        max-height: 250px;
+        overflow-y: auto;
+        background: #f3f3f3;
+        padding: 20px;
+        width: 100%;
+        .cardDiv {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            background-color: #ffffff;
+            border: solid 1px #dce5eb;
+            color: #505050;
+            .cardHeader {
+                display: flex;
+                a {
+                    cursor: pointer;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

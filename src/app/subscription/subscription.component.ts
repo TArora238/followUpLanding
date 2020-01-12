@@ -52,7 +52,7 @@ export class SubscriptionComponent implements OnInit {
       if (localStorage.getItem('accessToken')) {
         this.accessToken = localStorage.getItem('accessToken');
       } else {
-        this.router.navigate(['signup']);
+        this.router.navigate(['login']);
       }
     }
   }
@@ -124,7 +124,7 @@ export class SubscriptionComponent implements OnInit {
             if (localStorage.getItem('accessToken')) {
               this.accessToken = localStorage.getItem('accessToken');
             } else {
-              this.router.navigate(['signup']);
+              this.router.navigate(['login']);
             }
           }
           const params = {
@@ -150,10 +150,11 @@ export class SubscriptionComponent implements OnInit {
               } else {
                 form.reset();
                 form.resetForm();
+                this.service.loader = false;
                 this.snackBar.open('Subscribed successfully', '', {
                   duration: 2000,
                 });
-                this.router.navigate(['success']);
+                this.router.navigate(['subscribeSuccess']);
               }
             }, (err: any) => {
 

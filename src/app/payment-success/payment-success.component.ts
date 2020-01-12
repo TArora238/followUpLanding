@@ -2,15 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { ServiceService } from 'app/shared/service.service';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { fadeInUp } from 'ng-animate';
+
 @Component({
-  selector: 'app-success',
-  templateUrl: './success.component.html',
-  styleUrls: ['./success.component.scss'],
+  selector: 'app-payment-success',
+  templateUrl: './payment-success.component.html',
+  styleUrls: ['./payment-success.component.scss'],
   animations: [
     trigger('fadeInUp', [transition('* => *', useAnimation(fadeInUp))])
   ],
 })
-export class SuccessComponent implements OnInit {
+export class PaymentSuccessComponent implements OnInit {
 
   constructor(private service: ServiceService) { }
 
@@ -21,5 +22,4 @@ export class SuccessComponent implements OnInit {
     }, 10);
     localStorage.removeItem('accessToken');
   }
-
 }

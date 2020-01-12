@@ -74,7 +74,10 @@ export class AppComponent implements OnInit {
         // const titlee_temp = titlee.slice( 1 );
         let titlee_temp = titlee.slice(1);
         titlee_temp = titlee_temp.split('?')[0];
-        if (titlee_temp === 'signup' || titlee_temp === 'subscribe' || titlee_temp === 'success') {
+        if (titlee_temp === 'success' || titlee_temp === 'login' ||
+            titlee_temp === 'paymentMethod' || titlee_temp === 'subscribe' ||
+            titlee_temp === 'paymentMethodSuccess' || titlee_temp === 'paymentSuccess' ||
+            titlee_temp === 'signup') {
             return false;
         } else {
             return true;
