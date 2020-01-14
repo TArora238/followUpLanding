@@ -122,8 +122,6 @@ export class LoginComponent implements OnInit {
             duration: 2000,
           });
         });
-    
-
   }
   public socialLogin(socialPlatform: string) {
     let socialPlatformProvider;
@@ -136,7 +134,7 @@ export class LoginComponent implements OnInit {
     this.socialAuthService.signIn(socialPlatformProvider).then(
       (userData) => {
         console.log(socialPlatform + ' sign in data : ', userData);
-        this.login.email = userData.email;
+        // this.login.email = userData.email;
         if (socialPlatform === 'facebook') {
           this.mode_of_signup = 1;
           this.token = userData.token;
@@ -144,8 +142,41 @@ export class LoginComponent implements OnInit {
           this.mode_of_signup = 2;
           this.token = userData.token;
         }
-        this.loginAPI();
+        this.socialLoginAPI(userData.email);
       }
     );
+  }
+  socialLoginAPI(email) {
+    const params = {
+      'user_email': email,
+      'device_id': this.service.deviceId(),
+      device_type: this.env.device_type,
+      device_token: this.env.device_token,
+      app_type: this.env.app_type,
+      app_version: this.env.app_version,
+      mode_of_signup: this.mode_of_signup,
+      token: this.token
+    }
+    this.service.api('post', 'register_user', params)
+      .subscribe((data: any) => {
+        if (data.is_error) {
+          this.snackBar.open(data.err, '', {
+            duration: 2000,
+          });
+        } else {
+          this.snackBar.open('Login successfully', '', {
+            duration: 2000,
+          });
+          localStorage.setItem('accessToken', data.access_token);
+          localStorage.setItem('userData', data);
+          this.service.saveUserData(data);
+          this.router.navigate(['paymentMethod']);
+        }
+      }, (err: any) => {
+        console.log(err);
+        this.snackBar.open(err.error, '', {
+          duration: 2000,
+        });
+      });
   }
 }
