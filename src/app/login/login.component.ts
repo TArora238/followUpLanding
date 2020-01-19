@@ -135,6 +135,9 @@ export class LoginComponent implements OnInit {
       (userData) => {
         console.log(socialPlatform + ' sign in data : ', userData);
         // this.login.email = userData.email;
+        const name = userData.name.split(' ');
+        this.login.fName = name[0] || '';
+        this.login.lName = name[1] || '';
         if (socialPlatform === 'facebook') {
           this.mode_of_signup = 1;
           this.token = userData.token;
@@ -149,6 +152,9 @@ export class LoginComponent implements OnInit {
   socialLoginAPI(email) {
     const params = {
       'user_email': email,
+      'user_password': '',
+      'user_first_name': this.login.fName,
+      'user_last_name': this.login.lName,
       'device_id': this.service.deviceId(),
       device_type: this.env.device_type,
       device_token: this.env.device_token,
