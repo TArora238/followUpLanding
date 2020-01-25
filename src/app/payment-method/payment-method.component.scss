@@ -1,4 +1,4 @@
-.page-header {
+.main {
     min-height: 100vh;
     padding: 15vh 0;
     h1 {
@@ -258,5 +258,8 @@ button:active {
     .btn-followUp {
         margin: 20px 0;
         padding: 15px 0;
+    }
+    form {
+        width: 100%;
     }
 }

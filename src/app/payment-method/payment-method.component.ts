@@ -283,7 +283,7 @@ export class PaymentMethodComponent implements OnInit {
               billing_details: { name: (cardholderName as HTMLInputElement).value }
             }
           }
-        ).then(function (result) {
+        ).then((result) => {
           this.setOutcome(result);
         });
       } else if (intent === 'payment') {
@@ -293,7 +293,7 @@ export class PaymentMethodComponent implements OnInit {
             billing_details: { name: (cardholderName as HTMLInputElement).value }
           },
           setup_future_usage: 'off_session'
-        }).then(function (result) {
+        }).then((result) => {
           this.setOutcome(result);
         });
       }
