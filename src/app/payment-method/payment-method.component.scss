@@ -231,3 +231,32 @@ button:active {
         }
     }
 }
+
+.buttonRow {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 767px) {
+    .title,
+    .description {
+        padding: 10px;
+    }
+    .description {
+        font-size: 14px;
+    }
+    .container {
+        max-width: 100% !important;
+        padding: 0;
+        img.position-absolute {
+            position: relative !important;
+        }
+    }
+    .buttonRow {
+        display: block;
+    }
+    .btn-followUp {
+        margin: 20px 0;
+        padding: 15px 0;
+    }
+}

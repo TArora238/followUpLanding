@@ -283,7 +283,9 @@ export class PaymentMethodComponent implements OnInit {
               billing_details: { name: (cardholderName as HTMLInputElement).value }
             }
           }
-        ).then(this.setOutcome);
+        ).then(function (result) {
+          this.setOutcome(result);
+        });
       } else if (intent === 'payment') {
         stripe.confirmCardPayment(secret_key, {
           payment_method: {
@@ -291,7 +293,9 @@ export class PaymentMethodComponent implements OnInit {
             billing_details: { name: (cardholderName as HTMLInputElement).value }
           },
           setup_future_usage: 'off_session'
-        }).then(this.setOutcome);
+        }).then(function (result) {
+          this.setOutcome(result);
+        });
       }
     });
   }
